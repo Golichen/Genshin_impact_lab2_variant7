@@ -6,14 +6,13 @@ enough for educational purposes.
 
 ## Project structure
 
-- `dictionary.py` -- implementation of `Dictionary` class
-   and `Node`class with multiple features.
-   Stateless.
-- `test_dictionary.py` -- unit and PBT tests for `dictionary`.
+- `hashmap_separate_chaining_dict.py`.
+- `test_hashmap_separate_chaining_dict.py`.
 
 ## Features
 
-- PBT: `test_add_commutative`
+- PBT: `test_concat_property`, `test_immutability_after_operations`.
+- Recursive implementation for all operations.
 
 ## Contribution
 
