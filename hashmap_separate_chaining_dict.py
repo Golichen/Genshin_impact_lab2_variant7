@@ -1,7 +1,3 @@
-import itertools
-from functools import reduce as functools_reduce
-
-
 class HashMapSeparateChainingDict:
     def __init__(self, buckets=None, size=0, capacity=7):
         if buckets is None:
