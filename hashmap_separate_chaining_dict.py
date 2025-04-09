@@ -1,6 +1,7 @@
 import itertools
 from functools import reduce as functools_reduce
 
+
 class HashMapSeparateChainingDict:
     def __init__(self, buckets=None, size=0, capacity=7):
         if buckets is None:
@@ -10,7 +11,6 @@ class HashMapSeparateChainingDict:
         self.size = size
         self.capacity = capacity
 
-
     def __eq__(self, other):
         if not isinstance(other, HashMapSeparateChainingDict):
             return False
@@ -18,14 +18,12 @@ class HashMapSeparateChainingDict:
         return dict(to_list(self)) == dict(to_list(other))
         # return dict(to_list(self)) == dict(to_list(other))
 
-
     def __str__(self):
         items = []
         for bucket in self.buckets:
             for key, value in bucket:
                 items.append(f"{repr(key)}: {repr(value)}")
         return "{" + ", ".join(items) + "}"
-
 
     def __iter__(self):
         return iterator(self)
@@ -60,7 +58,7 @@ def remove(map, key):
         raise KeyError(f"Key {key} not found")
     new_buckets = map.buckets[:index] + (new_bucket,) + map.buckets[index+1:]
     # key_existed = len(new_bucket) != len(bucket)
-    new_size = map.size - 1 # if key_existed else map.size
+    new_size = map.size - 1  # if key_existed else map.size
     return HashMapSeparateChainingDict(new_buckets, new_size, map.capacity)
 
 
@@ -98,7 +96,6 @@ def to_list(map):
         current_bucket = buckets[0]
         new_acc = process_bucket(current_bucket, acc)
         return process_buckets(buckets[1:], new_acc)
-
 
     def process_bucket(bucket, acc):
         if not bucket:
@@ -171,6 +168,7 @@ def iterator(map):
             return
         yield from process_bucket(buckets[0])
         yield from process_buckets(buckets[1:])
+
     def process_bucket(bucket):
         if not bucket:
             return
