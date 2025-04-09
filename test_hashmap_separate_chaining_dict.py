@@ -2,7 +2,6 @@ import pytest
 import hypothesis.strategies as st
 from hypothesis import given
 from hashmap_separate_chaining_dict import (
-    HashMapSeparateChainingDict,
     cons,
     remove,
     member,
