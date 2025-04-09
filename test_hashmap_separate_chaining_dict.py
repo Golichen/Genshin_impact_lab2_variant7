@@ -21,7 +21,6 @@ keys = st.one_of(st.integers(), st.text(), st.booleans())
 values = st.one_of(st.integers(), st.text(), st.booleans())
 key_value_pairs = st.tuples(keys, values)
 
-# ------------------- Base Functionality Tests -------------------
 
 def test_empty():
     m = empty()
@@ -105,8 +104,8 @@ def test_str_representation():
     m = from_list([("a", 1), (2, "b")])
     assert str(m) == "{'a': 1, 2: 'b'}" or str(m) == "{2: 'b', 'a': 1}"
 
-# ------------------- Property-Based Tests -------------------
 
+# ------------------- Property-Based Tests -------------------
 @given(st.lists(key_value_pairs, unique_by=lambda x: x[0]))
 def test_from_list_to_list_equality(lst):
     m = from_list(lst)
@@ -148,8 +147,8 @@ def test_filter_property(lst):
     for k, v in to_list(filtered):
         assert pred(k, v)
 
-# ------------------- Iterator Tests -------------------
 
+# ------------------- Iterator Tests -------------------
 def test_iterator():
     m = from_list([("a", 1), (2, "b"), (None, "c")])
     keys = []
