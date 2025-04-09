@@ -1,4 +1,4 @@
-# GROUP-NAME - lab NUMBER - variant NUMBER
+# Genshin-impact - lab 2 - variant 7
 
 This is an example project which demonstrates project structure and necessary
 CI checks. It is not the best structure for real-world projects, but good
@@ -6,9 +6,10 @@ enough for educational purposes.
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
+- `dictionary.py` -- implementation of `Dictionary` class 
+   and `Node`class with multiple features.
    Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
+- `test_dictionary.py` -- unit and PBT tests for `dictionary`.
 
 ## Features
 
@@ -16,7 +17,7 @@ enough for educational purposes.
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- GAO Lichen -- all work, 'cause there's only one member.
 
 ## Changelog
 
@@ -29,4 +30,5 @@ enough for educational purposes.
 
 ## Design notes
 
+- ...
 - ...
